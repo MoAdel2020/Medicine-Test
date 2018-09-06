@@ -24,6 +24,11 @@ public class Medicine {
 
 		} else if (subject.equals("Anatomy")) {
 			System.out.println("Avaliable in 9/8/2018");
+			Scanner data = new Scanner(System.in);
+			System.out.print("Enter your email : ");
+			String email = data.nextLine();
+			System.out.println("Your email is : " + email);
+			
 
 		} else if (subject.equals("Bio")) {
 			System.out.println("Avaliable in next summer");
@@ -41,14 +46,3 @@ public class Medicine {
 	}
 }
 
-/*
- * public static void main(String[] args) { Scanner input = new
- * Scanner(System.in); System.out.print("Enter your name :  " ); String name =
- * input.nextLine();
- * 
- * System.out.print("your name :  " +name);
- * 
- * input.close();
- * 
- * }
- */
