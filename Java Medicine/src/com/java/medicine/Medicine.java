@@ -13,9 +13,9 @@ public class Medicine {
 		int age = input.nextInt();
 		System.out.println("Your age is : " + age);
 		
-		System.out.print("Subject : ");
-		String subject = input.nextLine();
-		System.out.println("Your Subject is : " + subject);
+//		System.out.print("Subject : ");
+//		String subject = input.nextLine();
+//		System.out.println("Your Subject is : " + subject);
 		input.close();
 		
 		
