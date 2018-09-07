@@ -14,15 +14,18 @@ public class Medicine2 {
 		if (isValidAge) {
 			String subject = enterYouSubject();
 			boolean isAvaliableSubject = checkSubjects(subject, age);
-			
-			if(isAvaliableSubject) {
+
+			if (isAvaliableSubject) {
 				System.out.println("Welcome in your Course.");
+				enterYouEmail();
 			} else {
 				System.out.println("Sorry this " + subject + " is NOT available");
 			}
-			
-		}
 
+		} else {
+			System.out.println("Sorry Your age is Not Available in our course !");
+
+		}
 		input.close();
 
 	}
