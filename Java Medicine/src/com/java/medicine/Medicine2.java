@@ -8,24 +8,29 @@ public class Medicine2 {
 	public static void main(String[] args) {
 		enterYouName();
 		int age = enterYouAge();
-		boolean isValid = checkAge(age);
-		if (isValid) {
+		boolean isValidAge = checkAge(age);
+
+		// Complete your register
+		if (isValidAge) {
 			String subject = enterYouSubject();
-			checkSubjects(subject, age);
+			boolean isAvaliableSubject = checkSubjects(subject, age);
+			
+			if(isAvaliableSubject) {
+				System.out.println("Welcome in your Course.");
+			} else {
+				System.out.println("Sorry this " + subject + " is NOT available");
+			}
+			
 		}
-		boolean isAvaliable = checkSubjects(subject, age);
-		
 
 		input.close();
 
 	}
 
 	private static void enterYouName() {
-
 		System.out.print("Enter your name : ");
 		String name = input.nextLine();
 		System.out.println("Your name is : " + name);
-
 	}
 
 	private static String enterYouSubject() {
@@ -47,7 +52,7 @@ public class Medicine2 {
 			System.out.println("Avaliable in next summer");
 			return true;
 		}
-		
+
 		return false;
 	}
 
