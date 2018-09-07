@@ -8,16 +8,22 @@ public class Medicine2 {
 	public static void main(String[] args) {
 		enterYouName();
 		int age = enterYouAge();
-		String subject = enterYouSubject();
-		checkSubjects(subject, age);
+		boolean isValid = checkAge(age);
+		if (isValid) {
+			String subject = enterYouSubject();
+			checkSubjects(subject, age);
+		}
+		boolean isAvaliable = checkSubjects(subject, age);
+		
+
 		input.close();
 
 	}
 
 	private static void enterYouName() {
-		
+
 		System.out.print("Enter your name : ");
-		String name= input.nextLine();
+		String name = input.nextLine();
 		System.out.println("Your name is : " + name);
 
 	}
@@ -29,23 +35,20 @@ public class Medicine2 {
 		return subject;
 	}
 
-	private static void checkSubjects( String subject, int age) {
+	private static boolean checkSubjects(String subject, int age) {
 		if (subject.equals("Physiology")) {
 			System.out.println("Not Avaliable");
-
+			return false;
 		} else if (subject.equals("Anatomy")) {
 			System.out.println("Avaliable in 9/8/2018");
-			System.out.print("Enter your email : ");
-			String email = input.nextLine();
-			System.out.println("Your email is : " + email);
 
-			checkAge(age);
-
+			return true;
 		} else if (subject.equals("Bio")) {
 			System.out.println("Avaliable in next summer");
-
-			checkAge(age);
+			return true;
 		}
+		
+		return false;
 	}
 
 	private static int enterYouAge() {
@@ -56,15 +59,23 @@ public class Medicine2 {
 		return age;
 	}
 
-	private static void checkAge(int age) {
+	private static boolean checkAge(int age) {
 		if (age >= 20 && age < 26) {
 			System.out.println(" Avaliable age");
-
+			return true;
 		} else if (age >= 26 && age > 31) {
 			System.out.println("Avaliable in 9/8/2018");
-
+			return true;
 		} else {
 			System.out.println("Not Avaliable Age ");
+			return false;
 		}
 	}
+
+	private static void enterYouEmail() {
+		System.out.print("Enter your email : ");
+		String email = input.nextLine();
+		System.out.println("Your email is : " + email);
+	}
+
 }
